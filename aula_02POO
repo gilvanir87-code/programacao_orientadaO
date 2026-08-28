@@ -1,0 +1,46 @@
+#=========================================================
+#ESCOLA DO FUTURO DE GOIÁS (EFG) - SISTEMA INTEGRADO
+#Desenvolvedores: Alunos do Técnico em Dev Web e Mobile II
+#Aula: Introdução a Classes e Objetos em Python
+#=========================================================
+#1.Definição da classe (a "fôrma" ou "molde")
+class aluno:
+#2.O metodo construtor (__init__)
+    def __init__(self, nome_completo, matricula, curso_atual):
+        #O self é a palavra mágica. Ele significa "a classe"
+        #Ele garante que os nomes dos alunos não se misture
+
+        self.nome = nome_completo
+        self.matricula = matricula
+        self.curso_atual = curso_atual
+        self.presencas = 0
+
+#3.Métodos de instâcia (Os "comportamentos" ou "Ações"
+    def registrar_presencas(self):
+        self.presencas += 1
+        print(f"Presenças confirmadas para {self.nome}")
+
+    def exibir_perfil (self):
+        print("\n" + "="*30)
+        print(f" DADOS DO ESTUDANTE | EFG")
+        print("="*30)
+        print(f"Nome: {self.nome}")
+        print(f"Matricula: {self.matricula}")
+        print(f"Curso_atual: {self.curso_atual}")
+        print(f"Presenças: {self.presencas}")
+        print("="*30+"\n")
+if __name__ == "__main__":
+    print("Iniciando o Sistema integrado EFG")
+
+    aluno_a = aluno("Guilherme Feitosa", "EFG-2026-01", "Dev Web2")
+    aluno_b = aluno("Gilvanir dos Santos", "EFG-2026-01", "Dev Web2")
+
+    aluno_a.exibir_perfil()
+    aluno_b.exibir_perfil()
+
+    print(">>>>Realizando chamada...")
+    aluno_a.registrar_presencas()
+    aluno_b.registrar_presencas()
+
+    aluno_a.exibir_perfil()
+    aluno_b.exibir_perfil()
